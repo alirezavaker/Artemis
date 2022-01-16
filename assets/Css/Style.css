@@ -1,0 +1,14 @@
+@charset "utf8";
+@import "Fonts.css";
+
+body {
+  direction: rtl;
+  font-family: irsMedium;
+  background-color: #fff;
+}
+.icons_nav {
+  font-size: x-large;
+}
+.dialog-main {
+  max-width:75% !important;
+}

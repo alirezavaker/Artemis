@@ -1,0 +1,3122 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="Assets/Plugins/Bootstrap-5.0.1/css/bootstrap.rtl.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="Assets/Plugins/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="Assets/Css/Style.css" />
+    <title>FileManager</title>
+  </head>
+  <body>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#FileManager"
+    >
+      مدیریت کننده فایل
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal modal-dialog-scrollable fade"
+      id="FileManager"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="FileManagerLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog dialog-main">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="FileManagerLabel">آپلود سنتر</h5>
+            <button
+              type="button"
+              class="btn btn-success ms-5"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              آپلود
+            </button>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Container -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <div class="d-flex align-items-start">
+                    <div
+                      class="nav flex-column nav-pills me-3"
+                      id="v-pills-tab"
+                      role="tablist"
+                      aria-orientation="vertical"
+                    >
+                      <button
+                        class="nav-link active"
+                        id="allFiles-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#allFiles"
+                        type="button"
+                        role="tab"
+                        aria-controls="allFiles"
+                        aria-selected="true"
+                      >
+                        <i class="bi-house"></i>
+                      </button>
+                      <button
+                        class="nav-link"
+                        id="allPictures-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#allPictures"
+                        type="button"
+                        role="tab"
+                        aria-controls="allPictures"
+                        aria-selected="false"
+                      >
+                        تصاویر
+                      </button>
+                      <button
+                        class="nav-link"
+                        id="allVideos-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#allVideos"
+                        type="button"
+                        role="tab"
+                        aria-controls="allVideos"
+                        aria-selected="false"
+                      >
+                        ویدئو
+                      </button>
+                      <button
+                        class="nav-link"
+                        id="allDocsZip-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#allDocsZip"
+                        type="button"
+                        role="tab"
+                        aria-controls="allDocsZip"
+                        aria-selected="false"
+                      >
+                        فایل
+                      </button>
+                      <button
+                        class="nav-link"
+                        id="allAudios-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#allAudios"
+                        type="button"
+                        role="tab"
+                        aria-controls="allAudios"
+                        aria-selected="false"
+                      >
+                        صوتی
+                      </button>
+                    </div>
+                    <div class="tab-content" id="v-pills-tabContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="allFiles"
+                        role="tabpanel"
+                        aria-labelledby="allFiles-tab"
+                      >
+                        <!-- Container Show Files -->
+                        <div class="fake">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#ConfirmDelete"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Container Show Files -->
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="allPictures"
+                        role="tabpanel"
+                        aria-labelledby="allPictures-tab"
+                      >
+                        <!-- Container Show Files -->
+                        <div class="fake">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Container Show Files -->
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="allVideos"
+                        role="tabpanel"
+                        aria-labelledby="allVideos-tab"
+                      >
+                        <!-- Container Show Files -->
+                        <div class="fake">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Container Show Files -->
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="allDocsZip"
+                        role="tabpanel"
+                        aria-labelledby="allDocsZip-tab"
+                      >
+                        <!-- Container Show Files -->
+                        <div class="fake">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Container Show Files -->
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="allAudios"
+                        role="tabpanel"
+                        aria-labelledby="allAudios-tab"
+                      >
+                        <!-- Container Show Files -->
+                        <div class="fake">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-3 mb-2">
+                                <div
+                                  class="
+                                    card
+                                    shadow
+                                    bg-transparent
+                                    border-0
+                                    p-0
+                                    m-0
+                                  "
+                                >
+                                  <div class="card-body">
+                                    <img
+                                      src="Assets/Images/C1.jpg"
+                                      alt="image"
+                                      class="w-100 rounded-3"
+                                    />
+                                    <div class="text-end mt-2">
+                                      <span class="text-muted"
+                                        >filename.png</span
+                                      >
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="card-footer m-0 p-2 bg-transparent"
+                                  >
+                                    <div class="btn-group float-end">
+                                      <button
+                                        type="button"
+                                        class="btn btn-success btn-sm"
+                                      >
+                                        <i class="bi-pen"></i>
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-danger btn-sm"
+                                      >
+                                        <i class="bi-trash"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Container Show Files -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Container -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              بستن
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Upload -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="formUpload"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog dialog-main">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="formUpload">بارگذاری فایل</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >نام فایل:</label
+                >
+                <input type="text" class="form-control" id="fileName" />
+              </div>
+              <div class="mb-3">
+                <label for="formFile" class="form-label">فایل :</label>
+                <input class="form-control" type="file" id="formFile" />
+                <small
+                  >پسوند های مجاز :
+                  <span class="text-danger">shel,kkk,kkkas,kakskas</span>
+                </small>
+              </div>
+              <button type="submit" class="btn btn-success float-end">
+                بارگزاری
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">نسخه 1.0.0</div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Confirm Delete Files -->
+    <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="ConfirmDelete"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">تأیید حذف فایل</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              آیا از حذف فایل
+              <code>file.png</code>
+              اطمینان دارید؟
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              بسیتن
+            </button>
+            <button type="button" class="btn btn-primary">بله،حذف میکنم</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Assets/Plugins/Bootstrap-5.0.1/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
